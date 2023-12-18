@@ -1,0 +1,18 @@
+@use '../util/' as u;
+
+.button {
+  display: inline-block;
+  color: var(--color-dk-purple);
+  font-weight: 700;
+  background-color: var(--color-green);
+  padding: 16px 33px 17px;
+  border: 2px solid var(--color-green);
+  transition: 150ms ease-in-out;
+  transition-property: background-color, color;
+
+  &:hover {
+    color: var(--color-green);
+    background-color: transparent;
+    border: 2px solid var(--color-green);
+  }
+}

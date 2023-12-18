@@ -1,0 +1,85 @@
+@use '../util/' as u;
+
+.hero {
+  position: relative;
+  background-color: var(--color-dk-purple);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-dk-purple),
+    transparent
+  );
+  text-align: center;
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include u.breakpoint-down(small) {
+      display: none;
+    }
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    translate: -35% 0;
+    width: u.rem(270);
+    height: u.rem(217);
+    background-image: url('/assets/images/bg-pattern-1.svg');
+  }
+
+  &::after {
+    width: u.rem(130);
+    height: u.rem(135);
+    right: 0;
+    bottom: 0;
+    translate: 25% 22%;
+    background-image: url('/assets/images/bg-pattern-2.svg');
+  }
+
+  &__wrapper {
+  }
+
+  &__headline {
+    color: var(--color-white);
+    margin-block-end: u.rem(40);
+    max-width: 11ch;
+    margin-inline: auto;
+  }
+
+  &__button {
+    margin-block-end: u.rem(50);
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      var(--color-dk-purple) 50%,
+      var(--color-white) 50%
+    );
+    padding-inline: 32px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 50% 0 0 0;
+      width: 100%;
+      height: 5vh;
+      background-image: url('/assets/images/curved-hero-bottom.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    margin-inline: auto;
+  }
+}

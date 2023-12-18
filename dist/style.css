@@ -1,0 +1,215 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 0.9353448276rem + 0.275862069vw, 1.125rem);
+  line-height: 1.7;
+  min-height: 150vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: min(100% - 2rem, 69.375rem);
+  margin-inline: auto;
+}
+
+:root {
+  --color-dk-purple: hsl(273, 85%, 13%);
+  --color-purple: hsl(271, 12%, 34%);
+  --color-green: hsl(150, 100%, 63%);
+  --color-lt-gray: hsl(274, 100%, 99%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+/* manrope-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/manrope-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* fraunces-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/fraunces-v31-latin-600.woff2") format("woff2");
+}
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  line-height: 1.1;
+}
+h1 span,
+h2 span,
+h3 span {
+  display: inline-block;
+}
+h1 span::after,
+h2 span::after,
+h3 span::after {
+  content: "";
+  height: 2px;
+  display: block;
+  background-color: var(--color-green);
+}
+
+h1 {
+  font-size: clamp(3.125rem, 2.1551724138rem + 4.1379310345vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 1.224137931rem + 3.3103448276vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 1.6206896552rem + 0.5517241379vw, 2rem);
+}
+
+.button {
+  display: inline-block;
+  color: var(--color-dk-purple);
+  font-weight: 700;
+  background-color: var(--color-green);
+  padding: 16px 33px 17px;
+  border: 2px solid var(--color-green);
+  transition: 150ms ease-in-out;
+  transition-property: background-color, color;
+}
+.button:hover {
+  color: var(--color-green);
+  background-color: transparent;
+  border: 2px solid var(--color-green);
+}
+
+.header {
+  background-color: var(--color-dk-purple);
+  color: var(--color-white);
+  padding-block: 32px 64px;
+}
+@media (min-width: 56.25em) {
+  .header {
+    padding-block: 56px;
+  }
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  width: 6rem;
+  height: auto;
+}
+.header__link {
+  color: var(--color-white);
+  transition: color 200ms ease-in-out;
+}
+.header__link:hover {
+  color: var(--color-green);
+}
+.header__link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--color-green);
+  margin-block-start: 4px;
+}
+
+.hero {
+  position: relative;
+  background-color: var(--color-dk-purple);
+  background-image: linear-gradient(to bottom, var(--color-dk-purple), transparent);
+  text-align: center;
+}
+.hero::before, .hero::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (max-width: 43.74875em) {
+  .hero::before, .hero::after {
+    display: none;
+  }
+}
+.hero::before {
+  top: 0;
+  left: 0;
+  translate: -35% 0;
+  width: 16.875rem;
+  height: 13.5625rem;
+  background-image: url("/assets/images/bg-pattern-1.svg");
+}
+.hero::after {
+  width: 8.125rem;
+  height: 8.4375rem;
+  right: 0;
+  bottom: 0;
+  translate: 25% 22%;
+  background-image: url("/assets/images/bg-pattern-2.svg");
+}
+.hero__headline {
+  color: var(--color-white);
+  margin-block-end: 2.5rem;
+  max-width: 11ch;
+  margin-inline: auto;
+}
+.hero__button {
+  margin-block-end: 3.125rem;
+}
+.hero__image-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(var(--color-dk-purple) 50%, var(--color-white) 50%);
+  padding-inline: 32px;
+}
+.hero__image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0 0;
+  width: 100%;
+  height: 5vh;
+  background-image: url("/assets/images/curved-hero-bottom.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.hero__image {
+  position: relative;
+  z-index: 1;
+  margin-inline: auto;
+}/*# sourceMappingURL=style.css.map */

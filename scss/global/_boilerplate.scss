@@ -1,0 +1,48 @@
+@use '../util/' as u;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-size: clamp(
+    u.rem(16),
+    0.9353448275862069rem + 0.27586206896551724vw,
+    u.rem(18)
+  );
+  line-height: 1.7;
+  min-height: 150vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: min(100% - u.rem(32), u.rem(1110));
+  margin-inline: auto;
+}

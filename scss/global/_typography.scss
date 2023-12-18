@@ -1,0 +1,44 @@
+@use '../util/' as u;
+
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  line-height: 1.1;
+
+  span {
+    display: inline-block;
+
+    &::after {
+      content: '';
+      height: 2px;
+      display: block;
+      background-color: var(--color-green);
+    }
+  }
+}
+
+h1 {
+  font-size: clamp(
+    u.rem(50),
+    2.155172413793103rem + 4.137931034482759vw,
+    u.rem(80)
+  );
+}
+
+h2 {
+  font-size: clamp(
+    u.rem(32),
+    1.2241379310344829rem + 3.3103448275862064vw,
+    u.rem(56)
+  );
+}
+
+h3 {
+  font-size: clamp(
+    u.rem(28),
+    1.6206896551724137rem + 0.5517241379310345vw,
+    u.rem(32)
+  );
+}
