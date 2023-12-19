@@ -3,11 +3,6 @@
 .hero {
   position: relative;
   background-color: var(--color-dk-purple);
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-dk-purple),
-    transparent
-  );
   text-align: center;
 
   &::before,
@@ -36,8 +31,8 @@
     width: u.rem(130);
     height: u.rem(135);
     right: 0;
-    bottom: 0;
-    translate: 25% 22%;
+    top: 50%;
+    translate: 25% -120%;
     background-image: url('/assets/images/bg-pattern-2.svg');
   }
 
@@ -55,26 +50,13 @@
     margin-block-end: u.rem(50);
   }
 
-  &__image-wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
+  &__curved {
+    // outline: 2px solid magenta;
     background-image: linear-gradient(
       var(--color-dk-purple) 50%,
-      var(--color-white) 50%
+      var(--color-lt-gray) 50%
     );
     padding-inline: 32px;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 50% 0 0 0;
-      width: 100%;
-      height: 5vh;
-      background-image: url('/assets/images/curved-hero-bottom.svg');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    }
   }
 
   &__image {

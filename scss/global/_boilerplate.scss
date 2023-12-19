@@ -15,7 +15,8 @@ body {
     u.rem(18)
   );
   line-height: 1.7;
-  min-height: 150vh;
+  padding-block-end: 50vh;
+  overflow-x: hidden;
 }
 
 h1,
@@ -45,4 +46,35 @@ a:active {
 .wrapper {
   width: min(100% - u.rem(32), u.rem(1110));
   margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.curved {
+  position: relative;
+
+  &::after {
+    // outline: 2px solid aqua;
+    content: '';
+    position: absolute;
+    inset: 49.8% 0 0 0;
+    width: 100%;
+    height: 4vh;
+    background-image: url('/assets/images/curved-hero-bottom.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &.light {
+    &::after {
+      background-image: url('/assets/images/curved-hero-bottom-light.svg');
+    }
+  }
 }
