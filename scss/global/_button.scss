@@ -3,12 +3,17 @@
 .button {
   display: inline-block;
   color: var(--color-dk-purple);
+
   font-weight: 700;
   background-color: var(--color-green);
-  padding: 16px 33px 17px;
+  padding: 12px 21px 12px;
   border: 2px solid var(--color-green);
   transition: 150ms ease-in-out;
   transition-property: background-color, color;
+
+  @include u.breakpoint(large) {
+    padding: 13px 30px 17px;
+  }
 
   &:hover {
     color: var(--color-green);
